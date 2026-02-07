@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MixOnAir | User Profile</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="site-bg"></div>
+    <header class="topbar">
+      <div class="topbar-inner frame">
+        <a href="/" class="brand">mixon<span>air</span></a>
+        <nav class="main-nav">
+          <a href="/events/">Featured</a>
+          <a href="/live/synthetic-pleasures/">Now Live</a>
+          <a href="/events/">Blog</a>
+          <a class="active" href="/user/">Charts</a>
+          <a href="/dj/">Mixer</a>
+        </nav>
+        <div class="top-actions">
+          <button class="setup">Setup Event</button>
+          <button class="ghost">Login</button>
+          <button class="ghost">Signup</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="frame user-layout">
+      <section class="user-main">
+        <div class="profile-header">
+          <div class="avatar"></div>
+          <div class="profile-copy">
+            <h1>DJ Antomattei of Tokyo</h1>
+            <p>Tokyo, Japan</p>
+            <p>
+              Antomattei, who is frequently credited as DJ Antomattei of Tokyo,
+              is a black Puerto Rican professional disc jockey.
+            </p>
+            <div class="social-row">
+              <span class="pill">1.3K Fans</span>
+              <span class="pill">Follow</span>
+              <span class="pill">FB</span>
+              <span class="pill">TW</span>
+              <span class="pill">SC</span>
+              <span class="pill">YT</span>
+            </div>
+          </div>
+        </div>
+        <div class="user-tabs">
+          <button>Tracks</button>
+          <button class="active">Mixes</button>
+          <button>Playlist</button>
+          <button>Shoutouts</button>
+        </div>
+        <div class="mix-list" id="mix-list"></div>
+      </section>
+
+      <aside class="user-side">
+        <div class="side-block">
+          <h3>Hosting (0) · Attending (0)</h3>
+          <p>DJ Antomattei of Tokyo has not setup any events.</p>
+        </div>
+        <div class="side-block">
+          <h3>Fans (43)</h3>
+          <div id="fan-list"></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="frame footer">
+      <p>© <span id="year"></span> MixOnAir</p>
+      <p>mixonair.com/user</p>
+    </footer>
+
+    <script src="/user.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MixOnAir | Events</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="site-bg"></div>
+    <header class="topbar">
+      <div class="topbar-inner frame">
+        <a href="/" class="brand">mixon<span>air</span></a>
+        <nav class="main-nav">
+          <a class="active" href="/events/">Featured</a>
+          <a href="/live/synthetic-pleasures/">Now Live</a>
+          <a href="/events/">Blog</a>
+          <a href="/user/">Charts</a>
+          <a href="/dj/">Mixer</a>
+        </nav>
+        <div class="top-actions">
+          <button class="setup">Setup Event</button>
+          <button class="ghost">Login</button>
+          <button class="ghost">Signup</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="frame app-grid">
+      <section class="main-column">
+        <div class="hero-banner">
+          <p class="hero-kicker">Live Digital Events</p>
+          <h1>Today's Events</h1>
+          <p>Live streams by global DJs, one continuous festival feed.</p>
+          <div class="promo-strip">
+            <ul>
+              <li>Brillz</li>
+              <li>Gent & Jawns</li>
+              <li>Candyland</li>
+              <li>Delta Heavy</li>
+              <li>MING</li>
+              <li>Dev79</li>
+            </ul>
+            <button class="promo-cta">Full Lineup + Set Times</button>
+          </div>
+        </div>
+
+        <div class="tab-row">
+          <button class="tab active">Today's Events</button>
+          <button class="tab">My DJs</button>
+          <button class="tab">Popular</button>
+          <button class="tab">All</button>
+          <div class="genre-pill">All Genres</div>
+        </div>
+
+        <section class="event-grid" id="event-grid"></section>
+      </section>
+
+      <aside class="side-column">
+        <section class="side-panel social-panel">
+          <h3>Follow @MixOnAir</h3>
+          <div class="social-actions">
+            <span class="social-count">1.5K</span>
+            <button class="tiny">Like</button>
+            <button class="tiny">Follow</button>
+          </div>
+        </section>
+
+        <section class="side-panel">
+          <h3>Featured Events</h3>
+          <div id="featured-list"></div>
+        </section>
+
+        <section class="ticket-panel">
+          <p>Exclusive Offer</p>
+          <h3>Festival Pass</h3>
+          <p>Promo code: MIXONAIR</p>
+          <button>Get Tickets</button>
+        </section>
+      </aside>
+    </main>
+
+    <div class="left-rail">
+      <span>Follow MixOnAir</span>
+      <span>Feedback</span>
+    </div>
+
+    <footer class="frame footer">
+      <p>© <span id="year"></span> MixOnAir</p>
+      <p>mixonair.com</p>
+    </footer>
+
+    <script src="/events.js"></script>
+  </body>
+</html>
