@@ -1,0 +1,476 @@
+{
+  "type": "block",
+  "gutenbergBlock": {
+    "blockName": "etch/component",
+    "attrs": {
+      "ref": 2602,
+      "attributes": {
+        "behavior": "Push Content",
+        "inset": "0 auto auto 0",
+        "hasCta": true,
+        "hasIcon": true,
+        "isDismissable": true,
+        "message": "Live now on MIXONAIR: Placeholder Event 001",
+        "cta": "Join Stream",
+        "ctaLink": "#"
+      }
+    },
+    "innerBlocks": [],
+    "innerHTML": "\n\n",
+    "innerContent": [
+      "\n",
+      "\n"
+    ]
+  },
+  "version": 2,
+  "styles": {
+    "etch-section-style": {
+      "type": "element",
+      "selector": ":where([data-etch-element=\"section\"])",
+      "collection": "default",
+      "css": "inline-size: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;",
+      "readonly": true
+    },
+    "etch-container-style": {
+      "type": "element",
+      "selector": ":where([data-etch-element=\"container\"])",
+      "collection": "default",
+      "css": "inline-size: 100%;\n  display: flex;\n  flex-direction: column;\n  max-width: var(--content-width, 1366px);\n  align-self: center;",
+      "readonly": true
+    },
+    "announcement-bar-style": {
+      "type": "class",
+      "selector": ".announcement-bar",
+      "collection": "default",
+      "css": "padding-block: var(--space-2xs, 0.5rem);\n  padding-inline: var(--gutter, 1rem);\n  background: var(--surface-3, #101522);\n  color: var(--base-100, #fff);\n  position: relative;\n  border-block-end: 1px solid var(--shade-ultra-dark, #090d14);\n  &[data-behavior*='overlap' i] {\n    position: absolute;\n    z-index: 9999;\n    inset: var(--inset, 0 auto auto 0);\n  }\n  &[data-behavior*='fixed' i],\n  &[data-position*='auto auto 0 0' i]:not([data-behavior*='push' i]) {\n    position: fixed;\n    z-index: 9999;\n    inset: var(--inset, 0 auto auto 0);\n  }",
+      "readonly": false
+    },
+    "announcement-inner-style": {
+      "type": "class",
+      "selector": ".announcement__inner",
+      "collection": "default",
+      "css": "display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: var(--space-s, 0.9rem);\n  justify-content: center;\n  align-items: center;",
+      "readonly": false
+    },
+    "announcement-message-wrap-style": {
+      "type": "class",
+      "selector": ".announcement__message-wrap",
+      "collection": "default",
+      "css": "display: flex;\n  align-items: center;\n  gap: var(--space-2xs, 0.5rem);",
+      "readonly": false
+    },
+    "announcement-icon-style": {
+      "type": "class",
+      "selector": ".announcement__icon",
+      "collection": "default",
+      "css": "inline-size: 1em;",
+      "readonly": false
+    },
+    "announcement-message-style": {
+      "type": "class",
+      "selector": ".announcement__message",
+      "collection": "default",
+      "css": "line-height: 1.2;\n  margin: 0;",
+      "readonly": false
+    },
+    "announcement-cta-style": {
+      "type": "class",
+      "selector": ".announcement__cta",
+      "collection": "default",
+      "css": "text-underline-offset: 0.1em;\n  color: var(--primary, #d7ff63);",
+      "readonly": false
+    },
+    "announcement-close-style": {
+      "type": "class",
+      "selector": ".announcement__close",
+      "collection": "default",
+      "css": "position: absolute;\n  inset-inline-end: calc(var(--gutter, 1rem) / 2);\n  inset-block-start: 50%;\n  translate: 0 -50%;\n  inline-size: max-content;\n  padding: 0;\n  border: 0;\n  color: inherit;\n  background: transparent;",
+      "readonly": false
+    },
+    "announcement-close-label-style": {
+      "type": "class",
+      "selector": ".announcement__close-label",
+      "collection": "default",
+      "css": "position: absolute !important;\n  inline-size: 1px !important;\n  block-size: 1px !important;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip-path: inset(100%);\n  white-space: nowrap;\n  border: 0;",
+      "readonly": false
+    },
+    "announcement-close-icon-style": {
+      "type": "class",
+      "selector": ".announcement__close-icon",
+      "collection": "default",
+      "css": "inline-size: 1em;",
+      "readonly": false
+    }
+  },
+  "components": {
+    "2602": {
+      "id": 2602,
+      "name": "Top Banner",
+      "key": "TopBanner",
+      "blocks": [
+        {
+          "blockName": "etch/element",
+          "attrs": {
+            "metadata": {
+              "name": "Top Banner"
+            },
+            "script": {
+              "code": "document.addEventListener('DOMContentLoaded', function () {\n  const banners = document.querySelectorAll('.announcement-bar');\n\n  banners.forEach((banner, index) => {\n    const bannerId = banner.id || `announcement-${index}`;\n    banner.id = bannerId;\n\n    const isDismissed = localStorage.getItem(`announcement-dismissed-${bannerId}`);\n    if (isDismissed) {\n      banner.style.display = 'none';\n      return;\n    }\n\n    const closeButton = banner.querySelector('.announcement__close');\n    if (!closeButton) return;\n\n    const dismiss = () => {\n      banner.style.display = 'none';\n      localStorage.setItem(`announcement-dismissed-${bannerId}`, 'true');\n    };\n\n    closeButton.addEventListener('click', function (event) {\n      event.preventDefault();\n      dismiss();\n    });\n\n    closeButton.addEventListener('keydown', function (event) {\n      if (event.key === 'Enter' || event.key === ' ') {\n        event.preventDefault();\n        dismiss();\n      }\n    });\n  });\n});",
+              "id": "top-banner-dismiss"
+            },
+            "tag": "div",
+            "attributes": {
+              "data-etch-element": "section",
+              "data-behavior": "{props.behavior}",
+              "style": "--inset: {props.inset}",
+              "data-position": "{props.inset}",
+              "class": "announcement-bar"
+            },
+            "styles": [
+              "etch-section-style",
+              "announcement-bar-style"
+            ]
+          },
+          "innerBlocks": [
+            {
+              "blockName": "etch/element",
+              "attrs": {
+                "metadata": {
+                  "name": "Inner"
+                },
+                "tag": "div",
+                "attributes": {
+                  "data-etch-element": "container",
+                  "class": "announcement__inner"
+                },
+                "styles": [
+                  "etch-container-style",
+                  "announcement-inner-style"
+                ]
+              },
+              "innerBlocks": [
+                {
+                  "blockName": "etch/element",
+                  "attrs": {
+                    "tag": "div",
+                    "attributes": {
+                      "class": "announcement__message-wrap"
+                    },
+                    "styles": [
+                      "announcement-message-wrap-style"
+                    ]
+                  },
+                  "innerBlocks": [
+                    {
+                      "blockName": "etch/condition",
+                      "attrs": {
+                        "condition": {
+                          "leftHand": "props.hasIcon",
+                          "operator": "isTruthy",
+                          "rightHand": null
+                        },
+                        "conditionString": "props.hasIcon"
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/svg",
+                          "attrs": {
+                            "tag": "svg",
+                            "attributes": {
+                              "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%20viewBox%3D%5C%220%200%2024%2024%5C%22%20width%3D%5C%2224%5C%22%20height%3D%5C%2224%5C%22%20fill%3D%5C%22none%5C%22%20stroke%3D%5C%22currentColor%5C%22%20stroke-width%3D%5C%221.5%5C%22%20stroke-linecap%3D%5C%22round%5C%22%20stroke-linejoin%3D%5C%22round%5C%22%3E%3Ccircle%20cx%3D%5C%2212%5C%22%20cy%3D%5C%2212%5C%22%20r%3D%5C%2210%5C%22%2F%3E%3Cpath%20d%3D%5C%22M12%2016V11.5%5C%22%2F%3E%3Cpath%20d%3D%5C%22M12%208.01V8%5C%22%2F%3E%3C%2Fsvg%3E",
+                              "stripColors": "true",
+                              "aria-hidden": "true",
+                              "class": "announcement__icon"
+                            },
+                            "styles": [
+                              "announcement-icon-style"
+                            ]
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "\n\n",
+                          "innerContent": [
+                            "\n",
+                            "\n"
+                          ]
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    },
+                    {
+                      "blockName": "etch/element",
+                      "attrs": {
+                        "tag": "p",
+                        "attributes": {
+                          "class": "announcement__message"
+                        },
+                        "styles": [
+                          "announcement-message-style"
+                        ]
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/text",
+                          "attrs": {
+                            "content": "{props.message}"
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "",
+                          "innerContent": []
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    }
+                  ],
+                  "innerHTML": "\n\n\n\n",
+                  "innerContent": [
+                    "\n",
+                    null,
+                    "\n\n",
+                    null,
+                    "\n"
+                  ]
+                },
+                {
+                  "blockName": "etch/condition",
+                  "attrs": {
+                    "condition": {
+                      "leftHand": "props.hasCta",
+                      "operator": "isTruthy",
+                      "rightHand": null
+                    },
+                    "conditionString": "props.hasCta"
+                  },
+                  "innerBlocks": [
+                    {
+                      "blockName": "etch/element",
+                      "attrs": {
+                        "tag": "a",
+                        "attributes": {
+                          "href": "{props.ctaLink}",
+                          "class": "announcement__cta"
+                        },
+                        "styles": [
+                          "announcement-cta-style"
+                        ]
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/text",
+                          "attrs": {
+                            "content": "{props.cta}"
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "",
+                          "innerContent": []
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    }
+                  ],
+                  "innerHTML": "\n\n",
+                  "innerContent": [
+                    "\n",
+                    null,
+                    "\n"
+                  ]
+                }
+              ],
+              "innerHTML": "\n\n\n\n",
+              "innerContent": [
+                "\n",
+                null,
+                "\n\n",
+                null,
+                "\n"
+              ]
+            },
+            {
+              "blockName": "etch/condition",
+              "attrs": {
+                "condition": {
+                  "leftHand": "props.isDismissable",
+                  "operator": "isTruthy",
+                  "rightHand": null
+                },
+                "conditionString": "props.isDismissable"
+              },
+              "innerBlocks": [
+                {
+                  "blockName": "etch/element",
+                  "attrs": {
+                    "tag": "button",
+                    "attributes": {
+                      "class": "announcement__close"
+                    },
+                    "styles": [
+                      "announcement-close-style"
+                    ]
+                  },
+                  "innerBlocks": [
+                    {
+                      "blockName": "etch/element",
+                      "attrs": {
+                        "tag": "span",
+                        "attributes": {
+                          "class": "announcement__close-label"
+                        },
+                        "styles": [
+                          "announcement-close-label-style"
+                        ]
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/text",
+                          "attrs": {
+                            "content": "Close Banner"
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "",
+                          "innerContent": []
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    },
+                    {
+                      "blockName": "etch/svg",
+                      "attrs": {
+                        "tag": "svg",
+                        "attributes": {
+                          "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%20viewBox%3D%5C%220%200%2024%2024%5C%22%20width%3D%5C%2224%5C%22%20height%3D%5C%2224%5C%22%20fill%3D%5C%22none%5C%22%20stroke%3D%5C%22currentColor%5C%22%20stroke-width%3D%5C%221.5%5C%22%20stroke-linecap%3D%5C%22round%5C%22%20stroke-linejoin%3D%5C%22round%5C%22%3E%3Cpath%20d%3D%5C%22M18%206L6%2018M18%2018L6%206%5C%22%2F%3E%3C%2Fsvg%3E",
+                          "class": "announcement__close-icon"
+                        },
+                        "styles": [
+                          "announcement-close-icon-style"
+                        ]
+                      },
+                      "innerBlocks": [],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        "\n"
+                      ]
+                    }
+                  ],
+                  "innerHTML": "\n\n\n\n",
+                  "innerContent": [
+                    "\n",
+                    null,
+                    "\n\n",
+                    null,
+                    "\n"
+                  ]
+                }
+              ],
+              "innerHTML": "\n\n",
+              "innerContent": [
+                "\n",
+                null,
+                "\n"
+              ]
+            }
+          ],
+          "innerHTML": "\n\n\n\n",
+          "innerContent": [
+            "\n",
+            null,
+            "\n\n",
+            null,
+            "\n"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "key": "behavior",
+          "name": "Behavior",
+          "type": {
+            "primitive": "string",
+            "specialized": "select"
+          },
+          "default": "Push Content",
+          "selectOptionsString": "Push Content\nOverlap Content\nOverlap Content (Fixed)"
+        },
+        {
+          "key": "inset",
+          "name": "Position (Overlap Behavior Only)",
+          "type": {
+            "primitive": "string",
+            "specialized": "select"
+          },
+          "default": "0 auto auto 0",
+          "selectOptionsString": "Top : 0 auto auto 0\nBottom : auto auto 0 0"
+        },
+        {
+          "key": "message",
+          "name": "Message",
+          "type": {
+            "primitive": "string"
+          },
+          "default": "Live now on MIXONAIR: Placeholder Event 001"
+        },
+        {
+          "key": "cta",
+          "name": "CTA",
+          "type": {
+            "primitive": "string"
+          },
+          "default": "Join Stream"
+        },
+        {
+          "key": "ctaLink",
+          "name": "CTA Link",
+          "type": {
+            "primitive": "string"
+          },
+          "default": "#"
+        },
+        {
+          "key": "hasCta",
+          "name": "Has CTA",
+          "type": {
+            "primitive": "boolean"
+          },
+          "default": true
+        },
+        {
+          "key": "hasIcon",
+          "name": "Has Icon",
+          "type": {
+            "primitive": "boolean"
+          },
+          "default": true
+        },
+        {
+          "key": "isDismissable",
+          "name": "Is Dismissable",
+          "type": {
+            "primitive": "boolean"
+          },
+          "default": true
+        }
+      ],
+      "description": "Top announcement banner component",
+      "legacyId": ""
+    }
+  }
+}

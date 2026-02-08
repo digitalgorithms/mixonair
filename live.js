@@ -1,23 +1,23 @@
 const chat = [
-  { user: "midiocore", msg: "and it's FUCKING EPIC" },
-  { user: "BassAction", msg: "oh fuck its saturday" },
-  { user: "BassAction", msg: "midi is drinking" },
-  { user: "midiocore", msg: "indeed" },
-  { user: "BassAction", msg: "utube is frozen" },
-  { user: "BassAction", msg: "utube is workin" },
-  { user: "Zalrium", msg: "refresh BA" },
-  { user: "BassAction", msg: "zanthium!!" },
-  { user: "Zalrium", msg: "ZALRIUM" },
-  { user: "BassAction", msg: "says processing" },
-  { user: "BassAction", msg: "so gay" },
-  { user: "BassAction", msg: "fuck" }
+  { user: "listener_01", msg: "Great transition." },
+  { user: "listener_02", msg: "Audio sounds clean." },
+  { user: "listener_03", msg: "Track ID please?" },
+  { user: "host_account", msg: "Thanks for tuning in." },
+  { user: "listener_04", msg: "This set is on point." },
+  { user: "listener_05", msg: "Love this groove." },
+  { user: "listener_06", msg: "Drop incoming?" },
+  { user: "listener_07", msg: "Crowd energy is high." },
+  { user: "listener_08", msg: "Following now." },
+  { user: "listener_09", msg: "Replay later please." },
+  { user: "listener_10", msg: "Big vibes." },
+  { user: "listener_11", msg: "Amazing mix." }
 ];
 
-const chatLog = document.getElementById("chat-log");
+const chatLog = document.getElementById("live__chat-log");
 if (chatLog) {
   chat.forEach((entry) => {
     const item = document.createElement("div");
-    item.className = "msg";
+    item.className = "live__chat-message";
     item.innerHTML = `<strong>${entry.user}:</strong> ${entry.msg}`;
     chatLog.appendChild(item);
   });

@@ -1,35 +1,35 @@
 const events = [
-  { artist: "midiocore", genre: "Open Format", listeners: 20 },
-  { artist: "Boltcutter", genre: "Dubstep", listeners: 9 },
-  { artist: "Todd Twiggs", genre: "House", listeners: 7 },
-  { artist: "DJ Morbln", genre: "Open Format", listeners: 6 },
-  { artist: "Gent & Jawns", genre: "Trap", listeners: 12 },
-  { artist: "Candyland", genre: "Electro", listeners: 18 }
+  { artist: "DJ Placeholder A", genre: "Open Format", listeners: 20 },
+  { artist: "DJ Placeholder B", genre: "Dubstep", listeners: 9 },
+  { artist: "DJ Placeholder C", genre: "House", listeners: 7 },
+  { artist: "DJ Placeholder D", genre: "Open Format", listeners: 6 },
+  { artist: "DJ Placeholder E", genre: "Trap", listeners: 12 },
+  { artist: "DJ Placeholder F", genre: "Electro", listeners: 18 }
 ];
 
 const featured = [
-  { artist: "Brillz", time: "Apr 24 @ 09:00 AM JST" },
-  { artist: "Gent & Jawns", time: "Apr 25 @ 02:00 AM JST" },
-  { artist: "Candyland", time: "Apr 25 @ 03:00 AM JST" },
-  { artist: "MING", time: "Apr 25 @ 04:00 AM JST" }
+  { artist: "Featured DJ 01", time: "Apr 24 @ 09:00 AM JST" },
+  { artist: "Featured DJ 02", time: "Apr 25 @ 02:00 AM JST" },
+  { artist: "Featured DJ 03", time: "Apr 25 @ 03:00 AM JST" },
+  { artist: "Featured DJ 04", time: "Apr 25 @ 04:00 AM JST" }
 ];
 
-const eventGrid = document.getElementById("event-grid");
+const eventGrid = document.getElementById("events__grid");
 const featuredList = document.getElementById("featured-list");
 
 events.forEach((event) => {
   const card = document.createElement("article");
   card.className = "event-card";
   card.innerHTML = `
-    <div class="cover">
+    <div class="event-card__cover">
       <h4>${event.artist}</h4>
     </div>
-    <div class="event-meta">
+    <div class="event-card__meta">
       <div>
         <p><strong>Now Live</strong> | ${event.genre}</p>
         <p>👥 ${event.listeners}</p>
       </div>
-      <button class="join">Join</button>
+      <button class="event-card__join">Join</button>
     </div>
   `;
   eventGrid.appendChild(card);
@@ -37,14 +37,14 @@ events.forEach((event) => {
 
 featured.forEach((item) => {
   const row = document.createElement("article");
-  row.className = "featured-row";
+  row.className = "featured-item";
   row.innerHTML = `
-    <div class="thumb"></div>
+    <div class="featured-item__thumb"></div>
     <div>
       <strong>${item.artist}</strong>
       <span>${item.time}</span>
     </div>
-    <button class="rsvp">RSVP</button>
+    <button class="featured-item__rsvp">RSVP</button>
   `;
   featuredList.appendChild(row);
 });

@@ -7,56 +7,59 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="site-bg"></div>
+    <div class="canvas-bg"></div>
     <header class="topbar">
-      <div class="topbar-inner frame">
-        <a href="/" class="brand">mixon<span>air</span></a>
-        <nav class="main-nav">
+      <div class="header__inner frame">
+        <a href="/" class="header__brand" aria-label="MIXONAIR Home">MIXONAIR</a>
+        <button class="header__menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-header-toggle>
+          Menu
+        </button>
+        <nav class="header__nav" id="primary-nav" data-header-nav>
           <a class="active" href="/events/">Featured</a>
           <a href="/live/synthetic-pleasures/">Now Live</a>
           <a href="/events/">Blog</a>
           <a href="/user/">Charts</a>
           <a href="/dj/">Mixer</a>
         </nav>
-        <div class="top-actions">
-          <button class="setup">Setup Event</button>
-          <button class="ghost">Login</button>
-          <button class="ghost">Signup</button>
+        <div class="header__actions" data-header-actions>
+          <a class="header__cta" href="#">Setup Event</a>
+          <a class="header__auth-link" href="#">Login</a>
+          <a class="header__auth-link" href="#">Signup</a>
         </div>
       </div>
     </header>
 
-    <main class="frame app-grid">
-      <section class="main-column">
-        <div class="hero-banner">
+    <main class="frame events">
+      <section class="events__main">
+        <div class="events__hero">
           <p class="hero-kicker">Live Digital Events</p>
           <h1>Today's Events</h1>
           <p>Live streams by global DJs, one continuous festival feed.</p>
-          <div class="promo-strip">
+          <div class="events__lineup">
             <ul>
-              <li>Brillz</li>
-              <li>Gent & Jawns</li>
-              <li>Candyland</li>
-              <li>Delta Heavy</li>
-              <li>MING</li>
-              <li>Dev79</li>
+              <li>DJ Placeholder 01</li>
+              <li>DJ Placeholder 02</li>
+              <li>DJ Placeholder 03</li>
+              <li>DJ Placeholder 04</li>
+              <li>DJ Placeholder 05</li>
+              <li>DJ Placeholder 06</li>
             </ul>
-            <button class="promo-cta">Full Lineup + Set Times</button>
+            <button class="events__hero-cta">Full Lineup + Set Times</button>
           </div>
         </div>
 
-        <div class="tab-row">
-          <button class="tab active">Today's Events</button>
-          <button class="tab">My DJs</button>
-          <button class="tab">Popular</button>
-          <button class="tab">All</button>
-          <div class="genre-pill">All Genres</div>
+        <div class="events__tabs">
+          <button class="events__tab active">Today's Events</button>
+          <button class="events__tab">My DJs</button>
+          <button class="events__tab">Popular</button>
+          <button class="events__tab">All</button>
+          <div class="events__filter">All Genres</div>
         </div>
 
-        <section class="event-grid" id="event-grid"></section>
+        <section class="events__grid" id="events__grid"></section>
       </section>
 
-      <aside class="side-column">
+      <aside class="events__sidebar">
         <section class="side-panel social-panel">
           <h3>Follow @MixOnAir</h3>
           <div class="social-actions">
@@ -90,6 +93,7 @@
       <p>mixonair.com</p>
     </footer>
 
+    <script src="/header.js"></script>
     <script src="/events.js"></script>
   </body>
 </html>

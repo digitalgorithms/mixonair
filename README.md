@@ -2,6 +2,15 @@
 
 This project is a static recreation of the old DJ livestream platform style.
 
+## WordPress workflow
+
+This project now uses a WordPress build workflow (MAMP + Etch + ACSS) with GitHub tracking.
+
+- Workflow guide: `docs/WORDPRESS_GITHUB_WORKFLOW.md`
+- Etch exports folder: `wordpress/exports/etch/`
+- ACSS exports folder: `wordpress/exports/acss/`
+- Theme export folder: `wordpress/exports/theme/`
+
 ## Local preview
 
 ```bash

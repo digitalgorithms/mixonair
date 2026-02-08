@@ -7,61 +7,64 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="site-bg"></div>
+    <div class="canvas-bg"></div>
     <header class="topbar">
-      <div class="topbar-inner frame">
-        <a href="/" class="brand">mixon<span>air</span></a>
-        <nav class="main-nav">
+      <div class="header__inner frame">
+        <a href="/" class="header__brand" aria-label="MIXONAIR Home">MIXONAIR</a>
+        <button class="header__menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-header-toggle>
+          Menu
+        </button>
+        <nav class="header__nav" id="primary-nav" data-header-nav>
           <a href="/events/">Featured</a>
           <a href="/live/synthetic-pleasures/">Now Live</a>
           <a href="/events/">Blog</a>
           <a class="active" href="/user/">Charts</a>
           <a href="/dj/">Mixer</a>
         </nav>
-        <div class="top-actions">
-          <button class="setup">Setup Event</button>
-          <button class="ghost">Login</button>
-          <button class="ghost">Signup</button>
+        <div class="header__actions" data-header-actions>
+          <a class="header__cta" href="#">Setup Event</a>
+          <a class="header__auth-link" href="#">Login</a>
+          <a class="header__auth-link" href="#">Signup</a>
         </div>
       </div>
     </header>
 
-    <main class="frame user-layout">
-      <section class="user-main">
-        <div class="profile-header">
-          <div class="avatar"></div>
-          <div class="profile-copy">
-            <h1>DJ Antomattei of Tokyo</h1>
-            <p>Tokyo, Japan</p>
+    <main class="frame profile">
+      <section class="profile__main">
+        <div class="profile__header">
+          <div class="profile__avatar"></div>
+          <div class="profile__bio">
+            <h1>Artist Placeholder</h1>
+            <p>City, Region</p>
             <p>
-              Antomattei, who is frequently credited as DJ Antomattei of Tokyo,
-              is a black Puerto Rican professional disc jockey.
+              This is placeholder profile copy for MIXONAIR. Replace with artist
+              bio text when real profiles are available.
             </p>
-            <div class="social-row">
-              <span class="pill">1.3K Fans</span>
-              <span class="pill">Follow</span>
-              <span class="pill">FB</span>
-              <span class="pill">TW</span>
-              <span class="pill">SC</span>
-              <span class="pill">YT</span>
+            <div class="profile__social">
+              <span class="profile__social-item">1.3K Fans</span>
+              <span class="profile__social-item">Follow</span>
+              <span class="profile__social-item">FB</span>
+              <span class="profile__social-item">TW</span>
+              <span class="profile__social-item">SC</span>
+              <span class="profile__social-item">YT</span>
             </div>
           </div>
         </div>
-        <div class="user-tabs">
+        <div class="profile__tabs">
           <button>Tracks</button>
           <button class="active">Mixes</button>
           <button>Playlist</button>
           <button>Shoutouts</button>
         </div>
-        <div class="mix-list" id="mix-list"></div>
+        <div class="profile__content" id="profile__content"></div>
       </section>
 
-      <aside class="user-side">
-        <div class="side-block">
+      <aside class="profile__sidebar">
+        <div class="profile__sidebar-block">
           <h3>Hosting (0) · Attending (0)</h3>
-          <p>DJ Antomattei of Tokyo has not setup any events.</p>
+          <p>This profile has not set up any events.</p>
         </div>
-        <div class="side-block">
+        <div class="profile__sidebar-block">
           <h3>Fans (43)</h3>
           <div id="fan-list"></div>
         </div>
@@ -73,6 +76,7 @@
       <p>mixonair.com/user</p>
     </footer>
 
+    <script src="/header.js"></script>
     <script src="/user.js"></script>
   </body>
 </html>

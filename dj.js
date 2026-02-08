@@ -13,12 +13,12 @@ const features = [
   }
 ];
 
-const container = document.getElementById("feature-list");
+const container = document.getElementById("dj__feature-list");
 if (container) {
   features.forEach((item) => {
     const card = document.createElement("article");
-    card.className = "feature-item";
-    card.innerHTML = `<div class="feature-icon"></div><h3>${item.title}</h3><p>${item.text}</p>`;
+    card.className = "dj__feature-item";
+    card.innerHTML = `<div class="dj__feature-icon"></div><h3>${item.title}</h3><p>${item.text}</p>`;
     container.appendChild(card);
   });
 }

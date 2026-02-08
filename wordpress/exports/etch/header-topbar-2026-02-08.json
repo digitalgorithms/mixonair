@@ -1,0 +1,362 @@
+{
+  "type": "block",
+  "gutenbergBlock": {
+    "blockName": "etch/component",
+    "attrs": {
+      "ref": 2601,
+      "attributes": {
+        "position": "static",
+        "logoText": "MIXONAIR",
+        "logoLink": "/"
+      }
+    },
+    "innerBlocks": [
+      {
+        "blockName": "etch/slot-content",
+        "attrs": {
+          "name": "nav"
+        },
+        "innerBlocks": [],
+        "innerHTML": "\n\n",
+        "innerContent": [
+          "\n",
+          "\n"
+        ]
+      }
+    ],
+    "innerHTML": "\n\n",
+    "innerContent": [
+      "\n",
+      null,
+      "\n"
+    ]
+  },
+  "version": 2,
+  "styles": {
+    "etch-section-style": {
+      "type": "element",
+      "selector": ":where([data-etch-element=\"section\"])",
+      "collection": "default",
+      "css": "inline-size: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;",
+      "readonly": true
+    },
+    "etch-container-style": {
+      "type": "element",
+      "selector": ":where([data-etch-element=\"container\"])",
+      "collection": "default",
+      "css": "inline-size: 100%;\n  display: flex;\n  flex-direction: column;\n  max-width: var(--content-width, 1366px);\n  align-self: center; margin-inline: auto;",
+      "readonly": true
+    },
+    "topbar-style": {
+      "type": "class",
+      "selector": ".topbar",
+      "collection": "default",
+      "css": "padding-block: var(--space-xs, 0.6rem);\n  padding-inline: var(--gutter, 1rem);\n  background: var(--surface-2, #161a23);\n  border-block-end: 1px solid var(--shade-ultra-dark, #0c0f14);\n  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--base-100, #fff) 8%, transparent);\n  &[data-header-position='fixed'] {\n    position: fixed;\n    inset-block-start: calc(0px + var(--wp-admin--admin-bar--height));\n    inset-inline-start: 0;\n    z-index: 1000;\n  }",
+      "readonly": false
+    },
+    "header-inner-style": {
+      "type": "class",
+      "selector": ".header__inner",
+      "collection": "default",
+      "css": "display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  gap: var(--space-s, 0.9rem);",
+      "readonly": false
+    },
+    "header-brand-style": {
+      "type": "class",
+      "selector": ".header__brand",
+      "collection": "default",
+      "css": "font-size: var(--text-l, 1.3rem);\n  font-weight: 700;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  text-decoration: none;\n  color: var(--primary, #d7ff63);",
+      "readonly": false
+    },
+    "header-actions-style": {
+      "type": "class",
+      "selector": ".header__actions",
+      "collection": "default",
+      "css": "display: flex;\n  align-items: center;\n  gap: var(--space-2xs, 0.45rem);",
+      "readonly": false
+    },
+    "header-button-style": {
+      "type": "class",
+      "selector": ".header__button",
+      "collection": "default",
+      "css": "display: inline-block;\n  text-decoration: none;\n  border: 1px solid var(--shade-dark, #2c3342);\n  border-radius: var(--radius-xs, 0.2rem);\n  padding: 0.45em 0.7em;\n  line-height: 1;",
+      "readonly": false
+    },
+    "header-button-cta-style": {
+      "type": "class",
+      "selector": ".header__button--cta",
+      "collection": "default",
+      "css": "color: var(--base-0, #192300);\n  border-color: color-mix(in srgb, var(--primary, #d7ff63) 40%, #000);\n  background: linear-gradient(180deg, color-mix(in srgb, var(--primary, #d7ff63) 90%, #fff), color-mix(in srgb, var(--primary, #d7ff63) 70%, #000));",
+      "readonly": false
+    },
+    "header-button-subtle-style": {
+      "type": "class",
+      "selector": ".header__button--subtle",
+      "collection": "default",
+      "css": "color: var(--base-90, #dce4f7);\n  background: var(--surface-3, #202737);",
+      "readonly": false
+    }
+  },
+  "components": {
+    "2601": {
+      "id": 2601,
+      "name": "Topbar Header",
+      "key": "TopbarHeader",
+      "blocks": [
+        {
+          "blockName": "etch/element",
+          "attrs": {
+            "metadata": {
+              "name": "Topbar"
+            },
+            "tag": "header",
+            "attributes": {
+              "data-etch-element": "section",
+              "data-header-position": "{props.position.toLowerCase()}",
+              "class": "topbar"
+            },
+            "styles": [
+              "etch-section-style",
+              "topbar-style"
+            ]
+          },
+          "innerBlocks": [
+            {
+              "blockName": "etch/element",
+              "attrs": {
+                "metadata": {
+                  "name": "Inner"
+                },
+                "tag": "div",
+                "attributes": {
+                  "data-etch-element": "container",
+                  "class": "header__inner"
+                },
+                "styles": [
+                  "etch-container-style",
+                  "header-inner-style"
+                ]
+              },
+              "innerBlocks": [
+                {
+                  "blockName": "etch/element",
+                  "attrs": {
+                    "metadata": {
+                      "name": "Brand"
+                    },
+                    "tag": "a",
+                    "attributes": {
+                      "href": "{props.logoLink}",
+                      "class": "header__brand"
+                    },
+                    "styles": [
+                      "header-brand-style"
+                    ]
+                  },
+                  "innerBlocks": [
+                    {
+                      "blockName": "etch/text",
+                      "attrs": {
+                        "metadata": {
+                          "name": "Brand Text"
+                        },
+                        "content": "{props.logoText}"
+                      },
+                      "innerBlocks": [],
+                      "innerHTML": "",
+                      "innerContent": []
+                    }
+                  ],
+                  "innerHTML": "\n\n",
+                  "innerContent": [
+                    "\n",
+                    null,
+                    "\n"
+                  ]
+                },
+                {
+                  "blockName": "etch/slot-placeholder",
+                  "attrs": {
+                    "name": "nav"
+                  },
+                  "innerBlocks": [],
+                  "innerHTML": "\n\n",
+                  "innerContent": [
+                    "\n",
+                    "\n"
+                  ]
+                },
+                {
+                  "blockName": "etch/element",
+                  "attrs": {
+                    "metadata": {
+                      "name": "Actions"
+                    },
+                    "tag": "div",
+                    "attributes": {
+                      "class": "header__actions"
+                    },
+                    "styles": [
+                      "header-actions-style"
+                    ]
+                  },
+                  "innerBlocks": [
+                    {
+                      "blockName": "etch/element",
+                      "attrs": {
+                        "tag": "a",
+                        "attributes": {
+                          "href": "#",
+                          "class": "header__button header__button--cta"
+                        },
+                        "styles": [
+                          "header-button-style",
+                          "header-button-cta-style"
+                        ]
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/text",
+                          "attrs": {
+                            "content": "Setup Event"
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "",
+                          "innerContent": []
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    },
+                    {
+                      "blockName": "etch/element",
+                      "attrs": {
+                        "tag": "a",
+                        "attributes": {
+                          "href": "#",
+                          "class": "header__button header__button--subtle"
+                        },
+                        "styles": [
+                          "header-button-style",
+                          "header-button-subtle-style"
+                        ]
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/text",
+                          "attrs": {
+                            "content": "Login"
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "",
+                          "innerContent": []
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    },
+                    {
+                      "blockName": "etch/element",
+                      "attrs": {
+                        "tag": "a",
+                        "attributes": {
+                          "href": "#",
+                          "class": "header__button header__button--subtle"
+                        },
+                        "styles": [
+                          "header-button-style",
+                          "header-button-subtle-style"
+                        ]
+                      },
+                      "innerBlocks": [
+                        {
+                          "blockName": "etch/text",
+                          "attrs": {
+                            "content": "Signup"
+                          },
+                          "innerBlocks": [],
+                          "innerHTML": "",
+                          "innerContent": []
+                        }
+                      ],
+                      "innerHTML": "\n\n",
+                      "innerContent": [
+                        "\n",
+                        null,
+                        "\n"
+                      ]
+                    }
+                  ],
+                  "innerHTML": "\n\n\n\n\n\n",
+                  "innerContent": [
+                    "\n",
+                    null,
+                    "\n\n",
+                    null,
+                    "\n\n",
+                    null,
+                    "\n"
+                  ]
+                }
+              ],
+              "innerHTML": "\n\n\n\n\n\n",
+              "innerContent": [
+                "\n",
+                null,
+                "\n\n",
+                null,
+                "\n\n",
+                null,
+                "\n"
+              ]
+            }
+          ],
+          "innerHTML": "\n\n",
+          "innerContent": [
+            "\n",
+            null,
+            "\n"
+          ]
+        }
+      ],
+      "properties": [
+        {
+          "key": "position",
+          "name": "Position",
+          "type": {
+            "primitive": "string",
+            "specialized": "select"
+          },
+          "default": "static",
+          "selectOptionsString": "Static : static\nFixed (Sticky) : fixed"
+        },
+        {
+          "key": "logoText",
+          "name": "Logo Text",
+          "type": {
+            "primitive": "string"
+          },
+          "default": "MIXONAIR"
+        },
+        {
+          "key": "logoLink",
+          "name": "Logo Link",
+          "type": {
+            "primitive": "string"
+          },
+          "default": "/"
+        }
+      ],
+      "description": "Topbar header component for MIXONAIR",
+      "legacyId": ""
+    }
+  }
+}

@@ -7,43 +7,46 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="site-bg"></div>
+    <div class="canvas-bg"></div>
     <header class="topbar">
-      <div class="topbar-inner frame">
-        <a href="/" class="brand">mixon<span>air</span></a>
-        <nav class="main-nav">
+      <div class="header__inner frame">
+        <a href="/" class="header__brand" aria-label="MIXONAIR Home">MIXONAIR</a>
+        <button class="header__menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-header-toggle>
+          Menu
+        </button>
+        <nav class="header__nav" id="primary-nav" data-header-nav>
           <a href="/events/">Featured</a>
           <a href="/live/synthetic-pleasures/">Now Live</a>
           <a href="/events/">Blog</a>
           <a href="/user/">Charts</a>
           <a class="active" href="/dj/">Mixer</a>
         </nav>
-        <div class="top-actions">
-          <button class="setup">Setup Event</button>
-          <button class="ghost">Login</button>
-          <button class="ghost">Signup</button>
+        <div class="header__actions" data-header-actions>
+          <a class="header__cta" href="#">Setup Event</a>
+          <a class="header__auth-link" href="#">Login</a>
+          <a class="header__auth-link" href="#">Signup</a>
         </div>
       </div>
     </header>
 
-    <main class="frame dj-layout">
-      <aside class="side-menu">
+    <main class="frame dj">
+      <aside class="dj__menu">
         <a class="active" href="#">Overview</a>
         <a href="#">Live Stream Events</a>
         <a href="#">Mixing Options</a>
         <a href="#">Testimonials</a>
       </aside>
 
-      <section class="main-column">
-        <div class="dj-overview">
-          <div class="dj-overview-head">
+      <section class="dj__main">
+        <div class="dj__overview">
+          <div class="dj__overview-head">
             <p class="hero-kicker">MixOnAir Events</p>
             <h2>The Ultimate Live Streaming Platform</h2>
           </div>
-          <article class="info-panel">
+          <article class="dj__panel">
             <h3>Overview</h3>
-            <div class="feature-list" id="feature-list"></div>
-            <div class="subhead">
+            <div class="dj__feature-list" id="dj__feature-list"></div>
+            <div class="dj__subhead">
               <h3>Live Stream Events</h3>
               <p>Online broadcasts that your fans will love.</p>
             </div>
@@ -57,6 +60,7 @@
       <p>mixonair.com/dj</p>
     </footer>
 
+    <script src="/header.js"></script>
     <script src="/dj.js"></script>
   </body>
 </html>

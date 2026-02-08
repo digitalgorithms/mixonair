@@ -1,20 +1,20 @@
 const mixes = [
-  { name: "DJ Antomattei of Tokyo has not uploaded any tracks.", meta: "Title · Artist" }
+  { name: "This profile has not uploaded any tracks yet.", meta: "Title · Artist" }
 ];
 
 const fans = [
-  { name: "RyanShutup", city: "Weston, FL" },
-  { name: "Matt Sim", city: "Toronto, Canada" },
-  { name: "Joseph davis", city: "" },
-  { name: "Misha Rebristy", city: "" },
-  { name: "DJ Defile", city: "" }
+  { name: "fan_placeholder_01", city: "City, Region" },
+  { name: "fan_placeholder_02", city: "City, Region" },
+  { name: "fan_placeholder_03", city: "City, Region" },
+  { name: "fan_placeholder_04", city: "City, Region" },
+  { name: "fan_placeholder_05", city: "City, Region" }
 ];
 
-const mixList = document.getElementById("mix-list");
+const mixList = document.getElementById("profile__content");
 if (mixList) {
   mixes.forEach((mix) => {
     const row = document.createElement("article");
-    row.className = "mix-item";
+    row.className = "profile__content-item";
     row.innerHTML = `<strong>${mix.name}</strong><p>${mix.meta}</p>`;
     mixList.appendChild(row);
   });
@@ -24,11 +24,11 @@ const fanList = document.getElementById("fan-list");
 if (fanList) {
   fans.forEach((fan) => {
     const row = document.createElement("article");
-    row.className = "fan-row";
+    row.className = "profile__fan-item";
     row.innerHTML = `
-      <div class="fan-avatar"></div>
+      <div class="profile__fan-avatar"></div>
       <div><strong>${fan.name}</strong><p>${fan.city}</p></div>
-      <button class="join">Fan</button>
+      <button class="profile__fan-action">Fan</button>
     `;
     fanList.appendChild(row);
   });
